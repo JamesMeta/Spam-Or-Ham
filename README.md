@@ -1,48 +1,31 @@
-# Assignment 01 - Spam Detector (Instructions)
-> Course: CSCI 2020U: Software Systems Development and Integration
+Hello and welcome to our project
 
-This is the template for your Assignment 01.
+Tired of all the annoying advertisements in your inbox, We have resolved to create a program that can filter out spam emails. Our spam detector uses a unigram approach to analyze each word in an email and determine whether or not it is spam. The program calculates probabilities based on each word's frequency, allowing it to distinguish between spam and legitimate emails with high accuracy. To train the system, We have used a dataset of emails (spam and non-spam) and have written the SpamDetector class to read, test, and train the model. With many samples to use, my program is well-equipped to filter out unwanted messages and improve my overall email experience. Our algorithm is 86% accurate and 81% precise so you know 8 times out of 10 our algorithm has got your back
 
-## Overview
-You have become frustrated with all the advertisements in your inbox. You resolve to create a spam detector to filter out the spam. The spam detector will use a dataset of E-Mails (spam or otherwise) to train your program to recognize whether or not new E-Mails are spam. The program will use a unigram approach [1], where each word is counted and associated with whether or not the message is spam. Your program will calculate probabilities based on each word’s frequency [2]. Luckily, you have not emptied your spam folder or inbox in quite a while, so you have many samples to use to train your system. 
+![Screenshot](projectphoto1.jpg)
 
-- Check the `Canvas/Assingments/Assignment 01` for more the detailed instructions.
+![Screenshot](projectphoto.jpg)
 
-### SpamDetectorServer - Endpoints
+This project was a collaborative effort made by James Mata, Mirisan Ravindran, and Harsh panchal
 
-**Listing all the test files**
+### Improvements
 
-This will return a `application/json` content type.
-- `http://localhost:8080/spamDetector-1.0/api/spam`
-See a sample of the response data:
-```
-[{"spamProbRounded":"0.00000","file":"00006.654c4ec7c059531accf388a807064363","spamProbability":5.901245803391957E-62,"actualClass":"Ham"},{"spamProbRounded":"0.00000","file":"00007.2e086b13730b68a21ee715db145522b9","spamProbability":2.800348071907053E-12,"actualClass":"Ham"},{"spamProbRounded":"0.00000","file":"00008.6b73027e1e56131377941ff1db17ff12","spamProbability":8.66861037294167E-14,"actualClass":"Ham"},{"spamProbRounded":"0.00000","file":"00009.13c349859b09264fa131872ed4fb6e4e","spamProbability":6.947265471550557E-12,"actualClass":"Ham"},{"spamProbRounded":"0.00000","file":"00010.d1b4dbbad797c5c0537c5a0670c373fd","spamProbability":1.8814467288977145E-7,"actualClass":"Ham"},{"spamProbRounded":"0.00039","file":"00011.bc1aa4dca14300a8eec8b7658e568f29","spamProbability":3.892844289937937E-4,"actualClass":"Ham"}]
-```
+Spam Detection Algorithm
 
-**Calculate and get accuracy**
-This will return a `application/json` content type.
-- `http://localhost:8080/spamDetector-1.0/api/spam/accuracy`
-See a sample of the response data:
-```
-{"val": 0.87564}
-```
+For our spam detection algorithm we noticed that alot of words within an email are markdown nonsense that dont contribute at all to spam detection but do slow down the operation. To combat this we included a full english dictionary that loads into a hashset to stay efficent. This was we can check whether or not a word is nonsense or not before we add it to our probability maps this speeds up computation by a significant margin and even provides more accurate detection
 
-**Calculate and get precision**
-This will return a `application/json` content type.
-- `http://localhost:8080/spamDetector-1.0/api/spam/precision`
-See a sample of the response data:
-```
-{"val": 0.56484}
-```
-### SpamDetectorServer - SpamDetector class
+HTML
 
-Most of your programming will be in the `SpamDetector` class. This class will be responsible for reading the testing and training data files, training, and tesing the model.
+The HTML code represents a webpage for a spam detector project. The code includes various sections such as the header, home section, about section, project section, team section, and footer. The header section contains a logo and a navigation menu with links to different sections of the page. The home section includes a title, a brief introduction, and an image. The about section describes the project and how it works. The project section displays a table of data related to the performance of the spam detector model, including accuracy and precision measures. The team section provides information about the team members who worked on the project. Lastly, the footer section includes the course code and a button that takes users back to the top of the page.
 
-> Obs1. Feel free to create other helper classes as you see fit.
-> 
-> Obs2. You are not expected to get the exact same values as the ones shown in the samples.
+CSS
 
-### References 
-[1] https://en.wikipedia.org/wiki/Bag-of-words_model 
+The CSS code included in this project is designed to provide a modern and responsive visual experience for the website. In addition to these defaults, we have added our own custom styles to define the look and feel of the website. These custom styles use the popular 'Poppins' font and define variables for colors that are used consistently throughout the website. The CSS also includes classes for the header, navbar, home, about, and project sections, which provide a consistent layout and styling across the website. Overall, the CSS code is well-organized and easy to read, making it easy to customize and build upon for future projects.
 
-[2] https://en.wikipedia.org/wiki/Naive_Bayes_spam_filtering 
+Javascript
+
+The JavaScript code is responsible for the functionality of the webpage. The first function toggles the navbar icon and displays the navbar when clicked. The second function highlights the active section in the navbar when scrolling. The code also includes a sticky navbar that appears when scrolling past a certain point on the page. Additionally, the code uses ScrollReveal to animate certain elements on the page. Finally, the code displays performance accuracy and precision data fetched from a server using fetch API and displays it on the webpage using JavaScript
+
+### How To Run
+
+Running this program is very simple if the nessesary environment is already setup with a glassfish server on stand-by. Since no hard coding is done and all directories are based on the repo simply cloneing the repo should set everything up. From there its as easy as running the glassfish server and opening the index.html file and your good to go
