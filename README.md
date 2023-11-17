@@ -1,8 +1,3 @@
----
-runme:
-  id: 01HFE1RHPKWT7GXTX4HJKVZ7BE
-  version: v2.0
----
 
 Hello and welcome to our project
 
